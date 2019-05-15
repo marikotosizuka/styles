@@ -1,0 +1,213 @@
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US">
+<info>
+<title>Journal of Agriculture Science (nodai syuho) MM</title>
+<title-short>PLOS</title-short>
+<id>
+https://csl.mendeley.com/styles/27582501/NodaiSyuhoMM
+</id>
+<link href="http://www.zotero.org/styles/plos" rel="self"/>
+<link href="http://www.zotero.org/styles/vancouver" rel="template"/>
+<link href="http://www.plosone.org/static/guidelines#references" rel="documentation"/>
+<author>
+<name>Sebastian Karcher</name>
+</author>
+<contributor>
+<name>mariko mizuno</name>
+<uri>https://www.mendeley.com/profiles/mariko-mizuno/</uri>
+</contributor>
+<category citation-format="numeric"/>
+<category field="science"/>
+<summary>Vancouver for PLoS Journals as of January 2015</summary>
+<updated>2019-05-15T06:52:36+00:00</updated>
+<rights license="http://creativecommons.org/licenses/by-sa/3.0/">
+This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License
+</rights>
+</info>
+<locale xml:lang="en">
+<date form="text" delimiter=" ">
+<date-part name="day"/>
+<date-part name="month" form="short" strip-periods="true"/>
+<date-part name="year"/>
+</date>
+<terms>
+<term name="presented at">presented at</term>
+<term name="retrieved">available</term>
+<term name="section" form="short">sect.</term>
+</terms>
+</locale>
+<macro name="author">
+<names variable="author" font-variant="small-caps">
+<name sort-separator=" " initialize-with="" name-as-sort-order="all" delimiter=", " delimiter-precedes-last="always"/>
+<label form="long" prefix=", "/>
+<substitute>
+<names variable="editor"/>
+</substitute>
+</names>
+</macro>
+<macro name="editor">
+<group delimiter=": ">
+<names variable="editor" suffix=".">
+<name sort-separator=" " initialize-with="" name-as-sort-order="all" delimiter=", " delimiter-precedes-last="always"/>
+<label form="long" prefix=", "/>
+</names>
+</group>
+</macro>
+<macro name="publisher">
+<choose>
+<if type="book">
+<group delimiter=", " suffix=".">
+<text variable="publisher" suffix=","/>
+<text variable="publisher-place" suffix="."/>
+</group>
+</if>
+<if type="chapter" match="all">
+<text variable="publisher" suffix=", "/>
+<text variable="publisher-place" suffix=","/>
+</if>
+</choose>
+</macro>
+<macro name="access"/>
+<macro name="accessed-date">
+<choose>
+<if variable="URL">
+<group prefix="[" suffix="]" delimiter=" ">
+<text term="cited" text-case="lowercase"/>
+<date variable="accessed" form="text"/>
+</group>
+</if>
+</choose>
+</macro>
+<macro name="container-title">
+<choose>
+<if type="article-journal article-magazine chapter paper-conference article-newspaper post-weblog webpage" match="any">
+<group suffix="." delimiter=" ">
+<choose>
+<if type="article-journal">
+<text variable="container-title" form="short" strip-periods="true" font-style="italic"/>
+</if>
+<else-if type="post-weblog webpage" match="any">
+<group delimiter=" ">
+<text term="in" text-case="capitalize-first" suffix=":"/>
+<text variable="container-title"/>
+<choose>
+<if variable="URL">
+<text term="internet" prefix="[" suffix="]" text-case="capitalize-first"/>
+</if>
+</choose>
+</group>
+</else-if>
+<else>
+<text variable="container-title" strip-periods="true"/>
+</else>
+</choose>
+</group>
+<text macro="edition" prefix=" "/>
+</if>
+<else-if type="bill legislation" match="any">
+<group delimiter=", ">
+<group delimiter=". ">
+<text variable="container-title"/>
+<group delimiter=" ">
+<text term="section" form="short" text-case="capitalize-first"/>
+<text variable="section"/>
+</group>
+</group>
+<text variable="number"/>
+</group>
+</else-if>
+<else-if type="speech">
+<group delimiter=": " suffix=";">
+<group delimiter=" ">
+<text variable="genre" text-case="capitalize-first"/>
+<text term="presented at"/>
+</group>
+<text variable="event"/>
+</group>
+</else-if>
+<else>
+<text variable="container-title" suffix="."/>
+</else>
+</choose>
+</macro>
+<macro name="title">
+<text variable="title" suffix=". "/>
+</macro>
+<macro name="edition">
+<choose>
+<if is-numeric="edition">
+<group delimiter=" ">
+<number variable="edition" form="ordinal"/>
+<text term="edition" form="short"/>
+</group>
+</if>
+<else>
+<text variable="edition" suffix="."/>
+</else>
+</choose>
+</macro>
+<macro name="date">
+<date date-parts="year" form="text" variable="issued"/>
+</macro>
+<macro name="pages">
+<choose>
+<if type="article-journal article-magazine article-newspaper" match="any">
+<text variable="page" prefix=": "/>
+</if>
+<else>
+<group prefix=" " delimiter=" ">
+<label variable="page" form="short"/>
+<text variable="page"/>
+</group>
+</else>
+</choose>
+</macro>
+<macro name="journal-location">
+<choose>
+<if type="article-journal article-magazine" match="any">
+<text variable="volume" font-weight="bold"/>
+</if>
+</choose>
+</macro>
+<macro name="report-details">
+<choose>
+<if type="report">
+<text variable="number" prefix="Report No.: "/>
+</if>
+</choose>
+</macro>
+<citation collapse="citation-number">
+<sort>
+<key variable="citation-number"/>
+</sort>
+<layout vertical-align="sup" delimiter="," suffix=")">
+<text variable="citation-number"/>
+</layout>
+</citation>
+<bibliography et-al-min="7" et-al-use-first="6" second-field-align="flush">
+<layout>
+<text variable="citation-number" suffix=")"/>
+<group delimiter=" ">
+<text macro="author"/>
+<text macro="date" prefix="(" suffix=")"/>
+<choose>
+<if type="chapter" match="none">
+<text macro="title"/>
+</if>
+<else-if type="chapter" match="any">
+<text macro="title" quotes="true"/>
+</else-if>
+</choose>
+</group>
+<group delimiter=" " suffix=". ">
+<text macro="container-title"/>
+<text macro="publisher"/>
+<group>
+<text macro="journal-location"/>
+<text macro="pages"/>
+</group>
+</group>
+<text macro="report-details" suffix=". "/>
+<text macro="access"/>
+</layout>
+</bibliography>
+</style>
